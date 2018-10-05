@@ -1,7 +1,7 @@
 # Google India Scholar Collaborative Project- AND Phase 2
 
 **Co-Mods**
-- Tavish Jain   (@tavishjain)
+- (Add your slack Handle here)
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@
 
 ## Getting Started
 - Share your Project Ideas
-- Contact me @TavishJain.and on slack.
+- Contact me (Tavish Jain) for more information
 - Looking for a good team name.
 
 ## Project URL
