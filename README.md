@@ -18,7 +18,7 @@
 
 ## Getting Started
 - Share your Project Ideas
-- Contact me (Tavish Jain) for more information
+- Contact me (Tavish Jain)(@TavishJain.and on slack) for more information
 - Looking for a good team name.
 
 ## Project URL
