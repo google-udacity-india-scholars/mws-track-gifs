@@ -48,6 +48,7 @@ In case there are any files please add them here as an Hierarchy for it to be be
 In case there is any of your Lauching styles to run your app please add it here!
 
 ### Installation
+You can add your installation guide here!
 
 ## Project Rubric Level
 For example: FEND - Level 2 Project Rubic used.
