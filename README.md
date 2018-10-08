@@ -1,6 +1,6 @@
 # Google India Scholar Collaborative Project- <Your Track> Phase 2
 
-Hi,You've got this template to edit as you start with the Collaborative Projects in Phase 2 and commit your changes.
+Hi,You've got this template to edit as you start with the Collaborative Projects in Phase 2 and commit your changes. Please read this (https://docs.google.com/document/d/18UC6AAfdgcLLZzuGO_unUlZwc2kBYZqBRogmjDK3Ysc/edit?usp=sharing) document very carefully to understand all the details about the Collaborative Projects.
 
 **Team**
 - (Add youror your team mates slack Handle here)
