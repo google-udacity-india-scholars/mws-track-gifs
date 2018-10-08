@@ -25,10 +25,12 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 <Add your Project Title here.>
 
 ## Project Description
-<In brief please update your Projec Description here! So that fellow mates in the community can understand what you project is about and contribute to the project>
+<In brief please update your Project Description here! So that fellow mates in the community can understand what you project is about and contribute to the project>
 
 ## Project URL
 [Visit the app](#)
+
+In case you have any!
 
 ### Screenshots
 ![homepage](#)
@@ -58,9 +60,11 @@ Add an Achowledgement if you want to add any.
 
 ## Project Moderators
 
+Please reach out to respective Mods for any quries about the Collaborative Projects!
+
 **AND** 
 - @Green_little_robot_.and
--@TavishJain.and
+- @TavishJain.and
 - @Shivam.and
 
 **ABND** 
