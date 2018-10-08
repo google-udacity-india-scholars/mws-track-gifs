@@ -3,7 +3,7 @@
 Hi,You've got this template to edit as you start with the Collaborative Projects in Phase 2 and commit your changes. Please read this (https://docs.google.com/document/d/18UC6AAfdgcLLZzuGO_unUlZwc2kBYZqBRogmjDK3Ysc/edit?usp=sharing) document very carefully to understand all the details about the Collaborative Projects.
 
 **Team**
-- (Add youror your team mates slack Handle here)
+- (Add yournor your teammates slack Handle here)
 
 ## Table of Contents
 
@@ -57,7 +57,15 @@ Add an Achowledgement if you want to add any.
 
 ## Project Moderators
 
-**AND** - @Green_little_robot_.and,@TavishJain.and, @Shivam.and
-**ABND** - @ak003.abnd
-**FEND** - @GauravSingh.FEND
-**MWS** - @Abhishekji.mws,@smriti.mws, @Siddiqi.mws
+**AND** 
+- @Green_little_robot_.and
+-@TavishJain.and
+- @Shivam.and
+**ABND** 
+- @ak003.abnd
+**FEND** 
+- @GauravSingh.FEND
+**MWS** 
+- @Abhishekji.mws
+- @smriti.mws
+- @Siddiqi.mws
