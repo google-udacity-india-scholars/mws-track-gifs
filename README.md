@@ -3,7 +3,7 @@
 Hi,You've got this template to edit as you start with the Collaborative Projects in Phase 2 and commit your changes. Please read this (https://docs.google.com/document/d/18UC6AAfdgcLLZzuGO_unUlZwc2kBYZqBRogmjDK3Ysc/edit?usp=sharing) document very carefully to understand all the details about the Collaborative Projects.
 
 **Team**
-- (Add yournor your teammates slack Handle here)
+- (Add your or your teammates slack Handle here)
 
 ## Table of Contents
 
