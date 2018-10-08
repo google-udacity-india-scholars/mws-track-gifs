@@ -1,6 +1,6 @@
-# Google India Scholar Collaborative Project- AND Phase 2
+# Google India Scholar Collaborative Project- <Your Track> Phase 2
 
-**Co-Mods**
+**Team**
 - (Add your slack Handle here)
 
 ## Table of Contents
@@ -17,9 +17,13 @@
 - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
-- Share your Project Ideas
-- Contact me (Tavish Jain)(@TavishJain.and on slack) for more information
-- Looking for a good team name.
+- Add any of the Getting Started that you want to mention here!
+
+## Project Title
+<Add your Project Title here.>
+
+## Project Description
+<In brief please update your Projec Description here! So that fellow mates in the community can understand what you project is about and contribute to the project>
 
 ## Project URL
 [Visit the app](#)
@@ -28,7 +32,7 @@
 ![homepage](#)
 
 ## Folder Structure
-Comming Soon
+In case there are any files please add them here as an Hierarchy for it to be better understandable.
 ```bash
 ├── README.md - This file.
 ├── 
@@ -36,13 +40,22 @@ Comming Soon
 ```
 
 ## Prerequisites
-* Within the scope of AND Nanodegree
+* Which ever the project you choose it should be strictly following any of the rubri/instructions in the Nanodegree Program
 
 ## How to launch the app locally?
-Comming Soon
+In case there is any of your Lauching styles to run your app please add it here!
+
 ### Installation
 
-## Resources
+## Project Rubric Level
+For example: FEND - Level 2 Project Rubic used.
 
 ## Acknowledgments
-**Special Thanks to @saif.udacity and @akshit.udacity!!!**
+Add an Achowledgement if you want to add any.
+
+## Project Moderators
+
+**AND** - @Green_little_robot_.and,@TavishJain.and, @Shivam.and
+**ABND** - @ak003.abnd
+**FEND** - @GauravSingh.FEND
+**MWS** - @Abhishekji.mws,@smriti.mws, @Siddiqi.mws
