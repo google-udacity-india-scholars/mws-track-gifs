@@ -1,0 +1,19 @@
+{
+  "name": "mws-track-gifs",
+  "version": "1.0.0",
+  "description": "Google India Scholar Collaborative Project- Phase 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/google-udacity-india-scholars/mws-track-gifs.git"
+  },
+  "author": "Istiaque Siddiqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/google-udacity-india-scholars/mws-track-gifs/issues"
+  },
+  "homepage": "https://github.com/google-udacity-india-scholars/mws-track-gifs#readme"
+}
