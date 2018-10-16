@@ -39,10 +39,21 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 - Step 5: After you are done ONLY commit those files on which you coded and raise PR.
 
 ## Project Title
-NOT YET DECIDED...Looking for suggestions
+Gify
 
 ## Project Description
 This project is about creating Progressive Web App(PWA) that lists animated gifs for different category, users can view trending gifs, search and create gif for any word, mark their favourite gifs, share gifs with others, can browase gifs in offline as well.
+
+**Features**
+
+-	Gets all the trending animated Gifs.
+-	Search Gif.
+-	Create gif from word.
+-	Get animated gif for different categories like birthday, greetings, happy, sad, crying,     
+  wedding, greetings, etc.
+-	Share gif with others.
+-	Save your favorite gifs.
+-	Works in offline.
 
 As a benchmark we will follow Restaurant Reviews: Stage 2 Rubrics
 
