@@ -24,6 +24,8 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 ## Getting Started
 - Step 1: Create your branch from develop branch only
 
+  ![](img/Capture.PNG)
+  
 - Step 2: Get copy of the repo on your system
   ```
   # git clone https://github.com/google-udacity-india-scholars/mws-track-gifs.git
