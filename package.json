@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/google-udacity-india-scholars/mws-track-gifs/issues"
   },
-  "homepage": "https://github.com/google-udacity-india-scholars/mws-track-gifs#readme"
+  "homepage": "https://github.com/google-udacity-india-scholars/mws-track-gifs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.1",
+    "pump": "^3.0.0"
+  }
 }
