@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Find and share animated gifs" />
 
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon/#">
     <link rel="stylesheet" href="css/style.css">
     <title>Gify</title>
@@ -14,21 +16,27 @@
 
 <body>
     <header>
-            <nav>
-                    <a href="#" class="logo">Gify</a>
-                    <ul>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Categores</a>
-                        </li>
-                        <li>
-                            <a href="#">Favorites</a>
-                        </li>
-                    </ul>
-                </nav>
+        <nav>
+            <a href="#" class="logo">Gify</a>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Categorise</a>
+                </li>
+                <li>
+                    <a href="#">Favorites</a>
+                </li>
+            </ul>
+            <input class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on" />
+        </nav>
     </header>
+    <main id="maincontent">
+        <section></section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/idb.js"></script>
 </body>
 
 </html>
