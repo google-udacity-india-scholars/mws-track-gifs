@@ -4,6 +4,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 
 **Team**
 - (Add your or your teammates slack Handle here)
+- @dharmateja.mws
 - @Siddiqi.mws
 - Looking for teammates
 
@@ -56,6 +57,8 @@ This project is about creating Progressive Web App(PWA) that lists animated gifs
 -	Works in offline.
 
 As a benchmark we will follow Restaurant Reviews: Stage 2 Rubrics
+
+And one needs to get their API key from from GIPHY https://giphy.com/ and it is an open source api for GIFS and images.
 
 ## Project URL
 [Visit the app](#)
