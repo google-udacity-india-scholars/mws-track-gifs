@@ -80,10 +80,16 @@ In case there are any files please add them here as an Hierarchy for it to be be
 * Which ever the project you choose it should be strictly following any of the rubri/instructions in the Nanodegree Program
 
 ## How to launch the app locally?
-In case there is any of your Lauching styles to run your app please add it here!
+
+* For development, use `gulp browser-sync`.
+* For production, Use `gulp clean` and `gulp` for creating production build. Go to `prod` folder run `python3 -m http.server` to run the production server.
 
 ### Installation
-You can add your installation guide here!
+
+```
+# npm i
+# npm i -g gulp-cli
+```
 
 ## Project Rubric Level
 MWS - Restaurant Reviews: Stage 2
