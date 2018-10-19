@@ -8,6 +8,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    font-family: "Roboto", sans-serif;
 }
 
 .flex-container {
@@ -18,8 +19,11 @@ html, body {
 header {
     width: 100%;
     height: 80px;
-    background-color: #7e57c2;
+    background-color: #673ab7;
     display: table;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    z-index: 1000;
 }
 
 nav {
@@ -62,4 +66,104 @@ nav .logo {
     font-size: 1rem;
     float: right;
     height: 30px;
+}
+
+#maincontent {
+    margin:40px auto;
+    width: 70%;
+    padding: 16px;
+    margin-top: 100px;
+}
+
+#trending-section {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    background-color: #ffffff;
+    width: 224px;
+    height: auto;
+    margin-right: 16px;
+    margin-bottom: 24px;
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+}
+
+.card .card-content {
+    padding: 2px 16px;
+}
+
+.card .card-action {
+    padding: 16px 24px;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    text-align: right;
+}
+
+.btn_favourite, 
+.btn_share {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 16px;
+} 
+
+#trending-section .card:last-of-type {
+    margin-right: 0;
+}
+
+/* On mouse-over, add a deeper shadow */
+#trending-section .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn_favourite:focus, 
+.btn_share:focus {
+    outline: none;
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple-effect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #ffffff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .7s, opacity 1s;
+}
+
+.ripple-effect:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+#footer {
+    background-color: #616161;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
