@@ -24,7 +24,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 ## Getting Started
 - Step 1: Create your branch from develop branch only
 
-  ![](img/Capture.PNG)
+  ![](screenshot/Capture.PNG)
   
 - Step 2: Get copy of the repo on your system
   ```
@@ -68,7 +68,7 @@ And one needs to get their API key from from GIPHY https://giphy.com/ and it is 
 In case you have any!
 
 ### Screenshots
-![homepage](#)
+![](screenshot/page-skeleton.gif)
 
 ## Folder Structure
 In case there are any files please add them here as an Hierarchy for it to be better understandable.
