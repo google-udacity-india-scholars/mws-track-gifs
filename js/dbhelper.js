@@ -1,6 +1,4 @@
 
-import { logErrorMsg } from './util';
-
 /**
  * @description Common database helper functions.
  */
