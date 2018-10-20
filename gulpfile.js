@@ -57,7 +57,9 @@ gulp.task('minify-js', (cb) => {
     eslint(),
     eslint.format(),
     eslint.failAfterError(),
-    babel(),
+    babel({
+      presets: ['@babel/env']
+    }),
     uglify(),
     gulp.dest('prod/js')
   ]);
@@ -66,7 +68,9 @@ gulp.task('minify-js', (cb) => {
     eslint(),
     eslint.format(),
     eslint.failAfterError(),
-    babel(),
+    babel({
+      presets: ['@babel/env']
+    }),
     uglify(),
     gulp.dest('prod')
   ],
