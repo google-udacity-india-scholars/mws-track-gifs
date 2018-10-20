@@ -25,7 +25,7 @@ class DBHelper {
      * This is a common method used for all network calls
      * @author Istiaque Siddiqi
      */
-    static getServerData() {
+    static getServerData(url) {
         return new Promise( async (resolve, reject) => {
             let response;
             try {
