@@ -7,7 +7,7 @@ class DBHelper {
     /**
      * Get your API KEY from https://giphy.com/
      */
-    static API_KEY() {
+    static get API_KEY() {
         // add api key
         const apiKey = `YOUR_API_KEY`;
         return apiKey;
@@ -16,7 +16,7 @@ class DBHelper {
     /**
      * API Base URL.
      */
-    static API_BASE_URL() {
+    static get API_BASE_URL() {
         return `https://api.giphy.com/v1/gifs`;
     }
 
