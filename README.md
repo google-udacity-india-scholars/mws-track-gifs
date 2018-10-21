@@ -4,6 +4,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 
 **Team**
 - (Add your or your teammates slack Handle here)
+- @Abdul Kadir.mws
 - @dharmateja.mws
 - @Siddiqi.mws
 - Looking for teammates
@@ -35,7 +36,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
   ```
   # git branch
   ```
-- Step 4: Now start contrinuting by going into your branch
+- Step 4: Now start contributing by going into your branch
   ```
   # git fetch && git checkout <YOUR_BRANCH_NAME>
   ```
