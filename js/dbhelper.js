@@ -26,7 +26,7 @@ class DBHelper {
      * @author Istiaque Siddiqi
      */
     static getServerData(url) {
-        return new Promise( async (resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             let response;
             try {
                 response = await fetch(url);
@@ -47,13 +47,13 @@ class DBHelper {
      * @author Istiaque Siddiqi
      */
     static getTrendingGifs() {
-        return new Promise( async (resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             let response;
             try {
                 const apiEndpoint = `${DBHelper.API_BASE_URL}/trending?api_key=${DBHelper.API_KEY}&limit=25&rating=G`;
                 response = await DBHelper.getServerData(apiEndpoint);
                 return resolve(response);
-            } catch(error) {
+            } catch (error) {
                 logErrorMsg(error, `getTrendingGifs`);
                 return reject(error.stack);
             }

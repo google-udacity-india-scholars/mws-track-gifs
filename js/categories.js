@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
  * @author Istiaque Siddiqi
  */
 const fetchCategories = () => {
+    const ul = document.getElementById('categories-list');
     GIF_CATEGORIES.forEach(category => {
-        createCategoryCard(category);
+        ul.appendChild(createCategoryCard(category));
     });
 };
 
@@ -28,13 +29,17 @@ const fetchCategories = () => {
  * @author Istiaque Siddiqi
  */
 const createCategoryCard = (category) => {
-    const categories = document.getElementById('categories');
+    const li = document.createElement('li');
+    const href = document.createElement('a');
+    href.href = 'category.html';
+
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
     card.style = 'width: 8vw;';
 
     const img = document.createElement('img');
     img.className = 'card-img';
+    img.style = 'height: 16vh';
     img.src = 'img/giphy.webp';
     img.alt = '';
     card.appendChild(img);
@@ -47,5 +52,7 @@ const createCategoryCard = (category) => {
     cardContent.appendChild(categoryName);
     card.appendChild(cardContent);
 
-    categories.appendChild(card);
+    href.appendChild(card);
+    li.appendChild(href);
+    return li;
 }
