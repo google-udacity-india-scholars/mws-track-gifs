@@ -15,7 +15,7 @@ const logErrorMsg = (error, methodName) => {
     console.log(`%c*********************** ERROR | ${Date()} | Method: ${methodName} ***********************`, 'color: white; background-color: red; padding: 4px');
     console.log(error.message);
     console.trace();
-    console.log(`%c****************************************************************** END ******************************************************************`, 'color: white; background-color: red; padding: 4px');
+    console.log(`%c******************************************************************* END *******************************************************************`, 'color: white; background-color: red; padding: 4px');
 }
 
 /**

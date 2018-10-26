@@ -1,11 +1,15 @@
 
 let isConnected = navigator.onLine;
 document.addEventListener('DOMContentLoaded', (event) => {
-    if (!isConnected) {
-        showToast(`Viewing content in offline!!`);
-    }
+    try {
+        if (!isConnected) {
+            showToast(`Viewing content in offline!!`);
+        }
 
-    fetchTrendingGifs();
+        fetchTrendingGifs();
+    } catch (error) {
+        logErrorMsg(error, 'fetchTrendingGifs');
+    }
 });
 
 
@@ -13,10 +17,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
  * @description Get all trending GIFS
  * @author Istiaque Siddiqi
  */
-const fetchTrendingGifs = () => {
-    const ul = document.getElementById('gif-list');
-    for (let i = 0; i < 6; i++) {
-        ul.appendChild(createGifCard());
+const fetchTrendingGifs = async () => {
+    try {
+        let gifs = await DBHelper.getTrendingGifs();
+        gifs = gifs.data;
+        const ul = document.getElementById('gif-list');
+        gifs.forEach(gif => {
+            let title = gif.title;
+            title = title.split(' ');
+            // getting only first two word from title
+            title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
+            title = title.toUpperCase();
+
+            let img = gif.images.original;
+            // Fallback if no webp format is not available   
+            img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
+            gif = { img, title };
+            ul.appendChild(createGifCard(gif));
+        });
+    } catch (error) {
+        logErrorMsg(error, 'fetchTrendingGifs');
     }
 }
 
@@ -26,7 +46,7 @@ const fetchTrendingGifs = () => {
  * @param {object} gif - gif object
  * @author Istiaque Siddiqi
  */
-const createGifCard = () => {
+const createGifCard = (gif) => {
     const li = document.createElement('li');
 
     const card = document.createElement('div');
@@ -35,7 +55,7 @@ const createGifCard = () => {
 
     const img = document.createElement('img');
     img.className = 'card-img';
-    img.src = 'img/giphy.webp';
+    img.src = gif.img;
     img.alt = '';
     card.appendChild(img);
 
@@ -43,7 +63,7 @@ const createGifCard = () => {
     cardContent.className = 'card-content';
     const title = document.createElement('h4');
     title.style = 'font-size: 1vw;';
-    title.innerText = 'Title Text'
+    title.innerText = gif.title;
     cardContent.appendChild(title);
     card.appendChild(cardContent);
 
