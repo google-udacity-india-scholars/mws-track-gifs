@@ -9,7 +9,7 @@ class DBHelper {
      */
     static get API_KEY() {
         // add api key
-        const apiKey = `Mv8cx0jg46ti65rm8sbK0BECcCY5f2ve&q`;
+        const apiKey = `YOUR_API_KEY`;
         return apiKey;
     }
 
