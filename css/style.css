@@ -150,7 +150,7 @@ nav .logo {
     background-position: 50%;
     transform: scale(10, 10);
     opacity: 0;
-    transition: transform .7s, opacity 1s;
+    transition: transform 1s, opacity 1s;
 }
 
 .ripple-effect:active:after {
