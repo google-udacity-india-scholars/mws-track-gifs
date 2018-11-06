@@ -1,6 +1,5 @@
 
 let isConnected = navigator.onLine;
-let c = 1;
 document.addEventListener('DOMContentLoaded', (event) => {
     if (!isConnected) {
         showToast(`Viewing content in offline!!`);
@@ -9,16 +8,63 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetchGifsByCategory();
 });
 
+/**
+ * 
+ * @description Get a parameter by name from page URL.
+ * @param {string} name - parameter name
+ * @param {string} url - page url
+ * @author Istiaque Siddiqi
+ */
+const getParameterByName = (name, url) => {
+    if (!url)
+        url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`),
+        results = regex.exec(url);
+    if (!results)
+        return null;
+    if (!results[2])
+        return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+};
+
 
 /**
  * @description Get all GIFS by category name
  * @author Istiaque Siddiqi
  */
-const fetchGifsByCategory = () => {
-    const ul = document.getElementById('gif-list');
-    for (let i = 0; i < 5; i++) {
-        ul.appendChild(createGifCard());
+const fetchGifsByCategory = async () => {
+    try {
+        let gifs;
+        let categoryName = getParameterByName('q');
+
+        if (!categoryName) { // no category name found in URL
+            throw (Error('No category name in URL'));
+        } else {
+            gifs = await DBHelper.getGifsByCategoryName(categoryName);
+        }
+
+        setCategoryView(categoryName, gifs.data);
+    } catch (error) {
+        logErrorMsg(error, `fetchGifsByCategory`);
     }
+}
+
+
+/**
+ * 
+ * @description Set all gifs for a particular category
+ * @param {string} categoryName - Name of the category
+ * @param {object} gifs - List of gifs for a specific category name
+ * @author Istiaque Siddiqi
+ */
+const setCategoryView = (categoryName, gifs) => {
+    document.getElementById('heading').innerText = categoryName.toUpperCase();
+    const ul = document.getElementById('gif-list');
+    gifs.forEach(gif => {
+        gif = customizeGifObject(gif);
+        ul.appendChild(createGifCard(gif));
+    });
 }
 
 
@@ -27,7 +73,7 @@ const fetchGifsByCategory = () => {
  * @param {object} gif - gif object
  * @author Istiaque Siddiqi
  */
-const createGifCard = () => {
+const createGifCard = (gif) => {
 
     const li = document.createElement('li');
 
@@ -37,7 +83,7 @@ const createGifCard = () => {
 
     const img = document.createElement('img');
     img.className = 'card-img';
-    img.src = `img/giphy${++c}.webp`;
+    img.src = gif.img;
     img.alt = '';
     card.appendChild(img);
 
@@ -45,7 +91,7 @@ const createGifCard = () => {
     cardContent.className = 'card-content';
     const title = document.createElement('h4');
     title.style = 'font-size: 1vw;';
-    title.innerText = 'Title Text'
+    title.innerText = gif.title;
     cardContent.appendChild(title);
     card.appendChild(cardContent);
 

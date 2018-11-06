@@ -3,7 +3,6 @@
  * Utility Functions
  */
 
-
 /**
  * 
  * @description This method is a utility function to log error message on console
@@ -14,6 +13,7 @@
 const logErrorMsg = (error, methodName) => {
     console.log(`%c*********************** ERROR | ${Date()} | Method: ${methodName} ***********************`, 'color: white; background-color: red; padding: 4px');
     console.log(error.message);
+    console.log(error.stack);
     console.trace();
     console.log(`%c******************************************************************* END *******************************************************************`, 'color: white; background-color: red; padding: 4px');
 }
@@ -68,3 +68,25 @@ const GIF_CATEGORIES = new Set([
     'Aww', 'Please', 'Yikes', 'OMG', 'Bye', 'Loser', 'Cold', 'Party', 'Excuse Me', 'What',
     'Stop', 'Sleepy', 'Creep', 'Scared', 'Chill Out', 'Done'
 ].sort());
+
+
+/**
+ * 
+ * @description This method is used to shorten the title to two words at most and 
+ * if webp format is not available than fallback to another fomrat
+ * @param {object} gif - JSON object
+ * @author Istiaque Siddiqi
+ */
+const customizeGifObject = (gif) => {
+    let title = gif.title;
+    title = title.split(' ');
+    // getting only first two word from title
+    title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
+    title = title.toUpperCase();
+
+    let img = gif.images.original;
+    // Fallback if webp format is not available   
+    img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
+    gif = { img, title };
+    return gif;
+}

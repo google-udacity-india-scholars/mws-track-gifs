@@ -5,7 +5,9 @@
 class DBHelper {
 
     /**
-     * Get your API KEY from https://giphy.com/
+     * @description Get your API KEY from https://giphy.com/
+     * @returns apikey
+     * @author Istiaque Siddiqi
      */
     static get API_KEY() {
         // add api key
@@ -14,7 +16,9 @@ class DBHelper {
     }
 
     /**
-     * API Base URL.
+     * @description API Base URL
+     * @returns api base URL
+     * @author Istiaque Siddiqi
      */
     static get API_BASE_URL() {
         return `https://api.giphy.com/v1/gifs`;
@@ -23,6 +27,7 @@ class DBHelper {
     /**
      * @description Fetch data from network.
      * This is a common method used for all network calls
+     * @param {string} url - API endpoint
      * @author Istiaque Siddiqi
      */
     static getServerData(url) {
@@ -55,6 +60,26 @@ class DBHelper {
                 return resolve(response);
             } catch (error) {
                 logErrorMsg(error, `getTrendingGifs`);
+                return reject(error.stack);
+            }
+        });
+    }
+
+
+    /**
+     * 
+     * @description Get a gif for category
+     * @author Istiaque Siddiqi
+     */
+    static getGifsByCategoryName(category) {
+        return new Promise(async (resolve, reject) => {
+            let response;
+            try {
+                const apiEndpoint = `${DBHelper.API_BASE_URL}/search?api_key=${DBHelper.API_KEY}&q=${category}&limit=25&offset=0&rating=G&lang=en`;
+                response = await DBHelper.getServerData(apiEndpoint);
+                return resolve(response);
+            } catch (error) {
+                logErrorMsg(error, `getGifsByCategoryName`);
                 return reject(error.stack);
             }
         });

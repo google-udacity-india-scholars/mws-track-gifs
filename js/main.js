@@ -1,15 +1,11 @@
 
 let isConnected = navigator.onLine;
 document.addEventListener('DOMContentLoaded', (event) => {
-    try {
-        if (!isConnected) {
-            showToast(`Viewing content in offline!!`);
-        }
-
-        fetchTrendingGifs();
-    } catch (error) {
-        logErrorMsg(error, 'fetchTrendingGifs');
+    if (!isConnected) {
+        showToast(`Viewing content in offline!!`);
     }
+
+    fetchTrendingGifs();
 });
 
 
@@ -21,23 +17,24 @@ const fetchTrendingGifs = async () => {
     try {
         let gifs = await DBHelper.getTrendingGifs();
         gifs = gifs.data;
-        const ul = document.getElementById('gif-list');
-        gifs.forEach(gif => {
-            let title = gif.title;
-            title = title.split(' ');
-            // getting only first two word from title
-            title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
-            title = title.toUpperCase();
-
-            let img = gif.images.original;
-            // Fallback if no webp format is not available   
-            img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
-            gif = { img, title };
-            ul.appendChild(createGifCard(gif));
-        });
+        setTrendingList(gifs);
     } catch (error) {
-        logErrorMsg(error, 'fetchTrendingGifs');
+        logErrorMsg(error, `fetchTrendingGifs`);
     }
+}
+
+/**
+ * 
+ * @description Set all trending gifs
+ * @param {object} gifs - list of gifs object
+ * @author Istiaque Siddiqi
+ */
+const setTrendingList = (gifs) => {
+    const ul = document.getElementById('gif-list');
+    gifs.forEach(gif => {
+        gif = customizeGifObject(gif);
+        ul.appendChild(createGifCard(gif));
+    });
 }
 
 
