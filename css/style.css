@@ -31,6 +31,7 @@ nav {
     padding-right: 150px;
     display: table-cell;
     vertical-align: middle;
+
 }
 
 nav ul {
@@ -44,7 +45,7 @@ nav ul li {
 }
 
 nav ul li a {
-    font-size: 1.3vw; 
+    font-size: 16px;
     text-decoration: none;
     padding: 14px 16px;
     color: #ffffff;
@@ -54,6 +55,9 @@ nav ul li a {
 nav .logo {
     color: #00e676;
     float: left;
+
+    font-size: 2.3vw;
+
     font-size: 2.5vw; 
     font-weight: bold;
     font-family: cursive, monospace;
@@ -66,7 +70,7 @@ nav .logo {
     border-radius: 4px;
     margin-top: 14px;
     padding-left: 1rem;
-    font-size: 1.3vw;
+    font-size: 16px;
     float: right;
     height: 30px;
     width: 14.3vw;
@@ -112,20 +116,20 @@ nav .logo {
     text-align: right;
 }
 
-.btn_favourite, 
+.btn_favourite,
 .btn_share {
     border: none;
     background-color: transparent;
     cursor: pointer;
     margin-left: 16px;
-} 
+}
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.btn_favourite:focus, 
+.btn_favourite:focus,
 .btn_share:focus {
     outline: none;
 }
@@ -178,6 +182,10 @@ nav .logo {
     height: 100%;
 }
 
+@media screen and (max-width: 880px) {
+    nav {
+        display: inline-flex;
+    }
 #gif-list,
 #categories-list {
     list-style: outside none none;
