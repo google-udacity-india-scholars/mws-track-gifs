@@ -31,7 +31,6 @@ nav {
     padding-right: 150px;
     display: table-cell;
     vertical-align: middle;
-
 }
 
 nav ul {
@@ -45,19 +44,15 @@ nav ul li {
 }
 
 nav ul li a {
-    font-size: 16px;
+    font-size: 1.3vw;
     text-decoration: none;
     padding: 14px 16px;
     color: #ffffff;
 }
 
-
 nav .logo {
     color: #00e676;
     float: left;
-
-    font-size: 2.3vw;
-
     font-size: 2.5vw; 
     font-weight: bold;
     font-family: cursive, monospace;
@@ -70,7 +65,7 @@ nav .logo {
     border-radius: 4px;
     margin-top: 14px;
     padding-left: 1rem;
-    font-size: 16px;
+    font-size: 1.3vw;
     float: right;
     height: 30px;
     width: 14.3vw;
@@ -154,7 +149,7 @@ nav .logo {
     background-position: 50%;
     transform: scale(10, 10);
     opacity: 0;
-    transition: transform .7s, opacity 1s;
+    transition: transform 1s, opacity 1s;
 }
 
 .ripple-effect:active:after {
@@ -182,10 +177,7 @@ nav .logo {
     height: 100%;
 }
 
-@media screen and (max-width: 880px) {
-    nav {
-        display: inline-flex;
-    }
+
 #gif-list,
 #categories-list {
     list-style: outside none none;

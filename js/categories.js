@@ -10,15 +10,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 /**
+* 
+* @description Build category page URL
+* @param {string} category - categeory name
+* @author Istiaque Siddiqi
+*/
+const urlForCategory = (category) => {
+    return (`./category.html?q=${category}`);
+}
+
+
+/**
  * 
  * @description Fetch all categories 
  * @author Istiaque Siddiqi
  */
 const fetchCategories = () => {
-    const ul = document.getElementById('categories-list');
-    GIF_CATEGORIES.forEach(category => {
-        ul.appendChild(createCategoryCard(category));
-    });
+    try {
+        const ul = document.getElementById('categories-list');
+        GIF_CATEGORIES.forEach(category => {
+            ul.appendChild(createCategoryCard(category));
+        });
+    } catch (error) {
+        logErrorMsg(error, `fetchCategories`);
+    }
 };
 
 
@@ -31,7 +46,7 @@ const fetchCategories = () => {
 const createCategoryCard = (category) => {
     const li = document.createElement('li');
     const href = document.createElement('a');
-    href.href = 'category.html';
+    href.href = urlForCategory(category.toLowerCase());
 
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
