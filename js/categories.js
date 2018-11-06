@@ -55,7 +55,7 @@ const createCategoryCard = (category) => {
     const img = document.createElement('img');
     img.className = 'card-img';
     img.style = 'height: 16vh';
-    img.src = 'img/giphy.webp';
+    img.src = `img/${category}.webp`;
     img.alt = '';
     card.appendChild(img);
 
