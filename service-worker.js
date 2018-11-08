@@ -1,4 +1,5 @@
-let static_cache = 'static-v1';
+let static_cache = 'gify-static-v3';
+let dynamic_cache = 'gify-dynamic-v2';
 
 const static_assets = [
   '/',
@@ -16,7 +17,14 @@ const static_assets = [
   '/js/main.js',
   '/js/snackbar.js',
   '/js/util.js',
-  '/js/idb.js'
+  '/js/idb.js',
+  '/icon/favorite-icon.svg',
+  '/icon/share-icon.svg',
+  '/img/Angry.webp',
+  '/img/Anniversary.webp',
+  '/img/Awkward.webp',
+  '/img/Aww.webp',
+  '/img/Birthday.webp'
 ];
 
 /**
@@ -38,15 +46,47 @@ const static_assets = [
 
  self.addEventListener('activate', (event) => {
    console.log("Service worker is activating...", event);
+   event.waitUntil(
+    caches.keys()
+    .then(keyList => {
+      return Promise.all(keyList.map(key => {
+          if (key != static_cache && key != dynamic_cache){
+            console.log("deleting old cache: ",key);
+            return caches.delete(key);
+          }
+        }));
+    })
+  );
    return self.clients.claim();
  });
 
+ /**
+  *
+  * @description Function to check if request url is in static_assets
+  * @author Sourya
+  */
+
+ function isInArray(string, array) {
+   var cachePath;
+   if (string.indexOf(self.origin) === 0) {
+     cachePath = string.substring(self.origin.length); // take the part of the URL AFTER the domain (e.g. after localhost:8080)
+   } else {
+     cachePath = string; // store the full request (for CDNs)
+   }
+   return array.indexOf(cachePath) > -1;
+ }
  /**
   *
   * @description Intercept fetch request
   * @author Sourya
   */
   self.addEventListener('fetch', (event) => {
+    if (isInArray(event.request.url, static_assets)) { //if url in staticassets, return from static_cache
+    event.respondWith(
+      caches.match(event.request)
+    );
+  } else {
+// if url not in static_assets, cache it to dynamic_cache
     event.respondWith(
       caches.match(event.request)
       .then(response => {
@@ -55,9 +95,17 @@ const static_assets = [
         } else {
           return fetch(event.request)
           .then(response => {
-            return response;
+            return caches.open(dynamic_cache)
+            .then(cache => {
+              cache.put(event.request, response.clone());
+              return response;
+            })
+          })
+          .catch(err =>{
+
           })
         }
       })
     )
+  }
   });
