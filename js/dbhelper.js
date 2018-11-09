@@ -35,7 +35,7 @@ class DBHelper {
             let response;
             try {
                 response = await fetch(url);
-                if (!response.ok) { // Didn't get a success response from server!  
+                if (!response.ok) { // Didn't get a success response from server!
                     return reject(Error(response.statusText));
                 }
                 return resolve(response.json());
@@ -67,7 +67,7 @@ class DBHelper {
 
 
     /**
-     * 
+     *
      * @description Get a gif for category
      * @author Istiaque Siddiqi
      */
