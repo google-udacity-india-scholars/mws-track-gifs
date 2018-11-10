@@ -4,6 +4,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 
 **Team**
 - (Add your or your teammates slack Handle here)
+- @bunny.mws
 - @Abdul Kadir.mws
 - @dharmateja.mws
 - @Siddiqi.mws
