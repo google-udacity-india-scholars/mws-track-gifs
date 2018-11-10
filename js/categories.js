@@ -31,6 +31,7 @@ const fetchCategories = () => {
         GIF_CATEGORIES.forEach(category => {
             ul.appendChild(createCategoryCard(category));
         });
+        loadLazyImage();
     } catch (error) {
         logErrorMsg(error, `fetchCategories`);
     }
@@ -55,7 +56,9 @@ const createCategoryCard = (category) => {
     const img = document.createElement('img');
     img.className = 'card-img';
     img.style = 'height: 16vh';
-    img.src = `img/${category}.webp`;
+    img.src = `img/placeholder.png`;
+    img.setAttribute('data-src', `img/${category}.webp`);
+    img.setAttribute('data-srcset', `img/${category}.webp`);
     img.alt = '';
     card.appendChild(img);
 
