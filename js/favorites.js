@@ -18,6 +18,7 @@ const fetchFavoriteGifs = () => {
     for (let i = 2; i < 5; i++) {
         ul.appendChild(createGifCard(i));
     }
+    loadLazyImage();
 }
 
 
@@ -35,7 +36,9 @@ const createGifCard = (i) => {
 
     const img = document.createElement('img');
     img.className = 'card-img';
-    img.src = `img/giphy${(i % 2 === 0) ? i : ''}.webp`;
+    img.src = `img/placeholder.png`;
+    img.setAttribute('data-src', `img/giphy${(i % 2 === 0) ? i : ''}.webp`);
+    img.setAttribute('data-srcset', `img/giphy${(i % 2 === 0) ? i : ''}.webp`);
     img.alt = '';
     card.appendChild(img);
 

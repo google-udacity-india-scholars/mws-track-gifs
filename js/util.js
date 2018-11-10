@@ -90,3 +90,46 @@ const customizeGifObject = (gif) => {
     gif = { img, title };
     return gif;
 }
+
+
+/**
+ * 
+ * @description Lazy loading gifs defer loading of gifs at later 
+ * point of time when they are needed just to improve the page load time
+ * and avoids unnessary utilization of system resources and user's data plan
+ * @author Istiaque Siddiqi
+ */
+const loadLazyImage = () => {
+    let lazyImages = document.querySelectorAll('img[data-src]');
+    if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    lazyLoadImage(entry.target);
+                    lazyImageObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            lazyImageObserver.observe(img);
+        });
+    } else {
+        lazyImages.forEach(img => {
+            lazyLoadImage(img);
+        });
+    }
+}
+
+
+/**
+ * 
+ * @param {object} image
+ * @author Istiaque Siddiqi
+ */
+const lazyLoadImage = (image) => {
+    image.setAttribute('src', image.getAttribute('data-src'));
+    image.onload = () => {
+        image.removeAttribute('data-src');
+    };
+};

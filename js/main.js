@@ -18,10 +18,12 @@ const fetchTrendingGifs = async () => {
         let gifs = await DBHelper.getTrendingGifs();
         gifs = gifs.data;
         setTrendingList(gifs);
+        loadLazyImage();
     } catch (error) {
         logErrorMsg(error, `fetchTrendingGifs`);
     }
 }
+
 
 /**
  * 
@@ -51,8 +53,10 @@ const createGifCard = (gif) => {
     card.style = 'width: 16vw;';
 
     const img = document.createElement('img');
-    img.className = 'card-img';
-    img.src = gif.img;
+    img.className = 'card-img lazy';
+    img.src = `img/placeholder.png`;
+    img.setAttribute('data-src', gif.img);
+    img.setAttribute('data-srcset', gif.img);
     img.alt = '';
     card.appendChild(img);
 
