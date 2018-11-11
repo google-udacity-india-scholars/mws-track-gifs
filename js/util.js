@@ -133,3 +133,40 @@ const lazyLoadImage = (image) => {
         image.removeAttribute('data-src');
     };
 };
+
+
+/**
+* 
+* @description Build and redirect to search page URL
+* @param {string} query - query string to search gifs
+* @author Istiaque Siddiqi
+*/
+const search = () => {
+    try {
+        window.location.href = `./search.html?q=${document.getElementById('q').value}`;
+    } catch (error) {
+        logErrorMsg(error, `search`);
+    }
+}
+
+// Event listener to key stroke in search box
+document.getElementById('q').addEventListener('keydown', debounced(1000, search));
+/**
+ * 
+ * @description Trigger api call only after user stops typing in search box using debounce technique
+ * @param {number} delay - time in millisecond
+ * @param {function} fn - function name
+ */
+function debounced(delay, fn) {
+    let timerId;
+    return function (...args) {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        timerId = setTimeout(() => {
+            fn(...args);
+            timerId = null;
+        }, delay);
+    }
+}
+
