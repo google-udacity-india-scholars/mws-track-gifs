@@ -78,16 +78,12 @@ nav .logo {
     margin-top: 100px;
 }
 
-#trending-section {
-    width: 100%;
-    height: 100%;
-}
 
 .card {
     float: left;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadows to create the "card" effect */
     transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px; 
     background-color: #ffffff;
     color: #000000;
 }
@@ -95,7 +91,6 @@ nav .logo {
 .card .card-img {
     border-radius: 5px 5px 0 0;
     width: 100%;
-    /* height: 100%; */
     height: 32vh;
 }
 
@@ -172,7 +167,8 @@ nav .logo {
 #trending-section,
 #categories-section,
 #category-section,
-#favorite-section {
+#favorite-section,
+#search-section {
     width: 100%;
     height: 100%;
 }
