@@ -187,3 +187,14 @@ nav .logo {
 #categories-list li {
     margin: 16px 8px;
 }
+
+img[data-src] {
+    filter: blur(0.5em);
+    transition: all 0.5s;
+  }
+  
+
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
