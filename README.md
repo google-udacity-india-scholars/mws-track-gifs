@@ -4,6 +4,8 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 
 **Team**
 - (Add your or your teammates slack Handle here)
+- @bunny.mws
+- @Abdul Kadir.mws
 - @dharmateja.mws
 - @Siddiqi.mws
 - Looking for teammates
@@ -24,6 +26,8 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 ## Getting Started
 - Step 1: Create your branch from develop branch only
 
+  ![](screenshot/Capture.PNG)
+  
 - Step 2: Get copy of the repo on your system
   ```
   # git clone https://github.com/google-udacity-india-scholars/mws-track-gifs.git
@@ -33,7 +37,7 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
   ```
   # git branch
   ```
-- Step 4: Now start contrinuting by going into your branch
+- Step 4: Now start contributing by going into your branch
   ```
   # git fetch && git checkout <YOUR_BRANCH_NAME>
   ```
@@ -66,7 +70,7 @@ And one needs to get their API key from from GIPHY https://giphy.com/ and it is 
 In case you have any!
 
 ### Screenshots
-![homepage](#)
+![](screenshot/page-skeleton.gif)
 
 ## Folder Structure
 In case there are any files please add them here as an Hierarchy for it to be better understandable.
@@ -80,10 +84,16 @@ In case there are any files please add them here as an Hierarchy for it to be be
 * Which ever the project you choose it should be strictly following any of the rubri/instructions in the Nanodegree Program
 
 ## How to launch the app locally?
-In case there is any of your Lauching styles to run your app please add it here!
+
+* For development, use `gulp browser-sync`.
+* For production, Use `gulp clean` and `gulp` for creating production build. Go to `prod` folder run `python3 -m http.server` to run the production server.
 
 ### Installation
-You can add your installation guide here!
+
+```
+# npm i
+# npm i -g gulp-cli
+```
 
 ## Project Rubric Level
 MWS - Restaurant Reviews: Stage 2

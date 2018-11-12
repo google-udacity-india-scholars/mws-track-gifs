@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Find and share animated gifs" />
+    <meta name="theme-color" content="#673ab7">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon/#">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/snackbar.css">
+    <title>Gify</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Gify</a>
+            <ul>
+                <li>
+                    <a class="ripple-effect" href="index.html">Trending</a>
+                </li>
+                <li>
+                    <a class="ripple-effect" href="categories.html">Categories</a>
+                </li>
+                <li>
+                    <a class="ripple-effect" href="favorites.html">Favorites</a>
+                </li>
+            </ul>
+            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
+            />
+        </nav>
+    </header>
+    <main id="maincontent">
+        <h2 id="heading"></h2>
+        <section id="search-section">
+            <ul id="gif-list"></ul>
+        </section>
+    </main>
+    <footer id="footer">
+        Copyright (c) 2018
+        <a href="index.html">
+            <strong>Gify</strong>
+        </a> All Rights Reserved.
+    </footer>
+
+    <script charset="utf-8" src="js/dbhelper.js"></script>
+    <!-- sw registration -->
+    <script type="application/javascript" charset="utf-8" src="js/register.js"></script>
+    <script charset="utf-8" src="js/search.js"></script>
+    <script charset="utf-8" src="js/util.js"></script>
+    <script charset="utf-8" src="js/idb.js"></script>
+    <script charset="utf-8" src="js/snackbar.js"></script>
+</body>
+
+</html>

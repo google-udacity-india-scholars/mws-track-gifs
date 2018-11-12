@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #eceff1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #673ab7;
+    display: table;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    z-index: 1000;
+}
+
+nav {
+    padding-left: 150px;
+    padding-right: 150px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 100px;
+    position: fixed;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    font-size: 1.3vw;
+    text-decoration: none;
+    padding: 14px 16px;
+    color: #ffffff;
+}
+
+nav .logo {
+    color: #00e676;
+    float: left;
+    font-size: 2.5vw; 
+    font-weight: bold;
+    font-family: cursive, monospace;
+    text-decoration: none;
+}
+
+.search-bar {
+    background-color: #ffffff;
+    border: 1px solid #dad7de;
+    border-radius: 4px;
+    margin-top: 14px;
+    padding-left: 1rem;
+    font-size: 1.3vw;
+    float: right;
+    height: 30px;
+    width: 14.3vw;
+}
+
+#maincontent {
+    margin:40px auto;
+    width: 70%;
+    padding: 16px;
+    margin-top: 100px;
+}
+
+
+.card {
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px; 
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.card .card-img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 32vh;
+}
+
+.card .card-content {
+    padding: 2px 16px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card .card-action {
+    padding: .6vw 1.3vw;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    text-align: right;
+}
+
+.btn_favourite,
+.btn_share {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn_favourite:focus,
+.btn_share:focus {
+    outline: none;
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple-effect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #ffffff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+
+.ripple-effect:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+#footer {
+    background-color: #616161;
+    color: #ffffff;
+    font-size: .9vw;
+    letter-spacing: 1px;
+    padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#trending-section,
+#categories-section,
+#category-section,
+#favorite-section,
+#search-section {
+    width: 100%;
+    height: 100%;
+}
+
+
+#gif-list,
+#categories-list {
+    list-style: outside none none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+#gif-list li,
+#categories-list li {
+    margin: 16px 8px;
+}
+
+img[data-src] {
+    filter: blur(0.5em);
+    transition: all 0.5s;
+  }
+  
+
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
