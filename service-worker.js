@@ -21,11 +21,11 @@ const static_assets = [
   '/js/search.js',
   '/icon/favorite-icon.svg',
   '/icon/share-icon.svg',
-  '/img/Angry.webp',
-  '/img/Anniversary.webp',
-  '/img/Awkward.webp',
-  '/img/Aww.webp',
-  '/img/Birthday.webp'
+  '/img/angry.webp',
+  '/img/anniversary.webp',
+  '/img/awkward.webp',
+  '/img/aww.webp',
+  '/img/birthday.webp'
 ];
 
 /**
