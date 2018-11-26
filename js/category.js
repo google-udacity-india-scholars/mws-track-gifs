@@ -80,7 +80,7 @@ const createGifCard = (gif) => {
 
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
-    card.style = 'width: 16vw;';
+    // card.style = 'width: 16vw;';
 
     const img = document.createElement('img');
     img.className = 'card-img';
@@ -93,7 +93,7 @@ const createGifCard = (gif) => {
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
     const title = document.createElement('h4');
-    title.style = 'font-size: 1vw;';
+    // title.style = 'font-size: 1vw;';
     title.innerText = gif.title;
     cardContent.appendChild(title);
     card.appendChild(cardContent);

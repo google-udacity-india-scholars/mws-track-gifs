@@ -12,7 +12,9 @@
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon/#">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="css/large.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 899px)" href="css/medium.css">
+    <link rel="stylesheet" media="screen and (max-width: 599px)" href="css/small.css">
     <link rel="stylesheet" href="css/snackbar.css">
     <title>Gify | Favorites</title>
 </head>
@@ -21,6 +23,8 @@
     <header>
         <nav>
             <a href="index.html" class="logo">Gify</a>
+            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
+            />
             <ul>
                 <li>
                     <a class="ripple-effect" href="index.html">Trending</a>
@@ -32,8 +36,6 @@
                     <a class="ripple-effect" href="favorites.html">Favorites</a>
                 </li>
             </ul>
-            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
-            />
         </nav>
     </header>
     <main id="maincontent">
@@ -42,12 +44,12 @@
             <ul id="gif-list"></ul>
         </section>
     </main>
-    <footer id="footer">
+    <!-- <footer id="footer">
         Copyright (c) 2018
         <a href="index.html">
             <strong>Gify</strong>
         </a> All Rights Reserved.
-    </footer>
+    </footer> -->
     <script charset="utf-8" src="js/idb.js"></script>
     <script charset="utf-8" src="js/snackbar.js"></script>
     <script charset="utf-8" src="js/util.js"></script>

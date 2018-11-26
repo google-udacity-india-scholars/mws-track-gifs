@@ -57,6 +57,7 @@ const fetchGifsByQuery = async () => {
  * @author Istiaque Siddiqi
  */
 const setSearchResults = (gifs, query) => {
+    document.getElementById('q').value = query;
     document.getElementById('heading').innerText = `Search results for ${query}`;
     const ul = document.getElementById('gif-list');
     console.log(gifs)
@@ -77,7 +78,7 @@ const createGifCard = (gif) => {
 
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
-    card.style = 'width: 16vw;';
+    // card.style = 'width: 16vw;';
 
     const img = document.createElement('img');
     img.className = 'card-img';
@@ -90,7 +91,7 @@ const createGifCard = (gif) => {
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
     const title = document.createElement('h4');
-    title.style = 'font-size: 1vw;';
+    // title.style = 'font-size: 1vw;';
     title.innerText = gif.title;
     cardContent.appendChild(title);
     card.appendChild(cardContent);

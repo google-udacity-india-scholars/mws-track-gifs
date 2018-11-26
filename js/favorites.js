@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
  */
 const fetchFavoriteGifs = () => {
     const ul = document.getElementById('gif-list');
-    for (let i = 2; i < 5; i++) {
+    for (let i = 2; i < 7; i++) {
         ul.appendChild(createGifCard(i));
     }
     loadLazyImage();
@@ -32,20 +32,20 @@ const createGifCard = (i) => {
 
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
-    card.style = 'width: 16vw;';
+    // card.style = 'width: 150px;';
 
     const img = document.createElement('img');
     img.className = 'card-img';
     img.src = `img/placeholder.png`;
-    img.setAttribute('data-src', `img/giphy${(i % 2 === 0) ? i : ''}.webp`);
-    img.setAttribute('data-srcset', `img/giphy${(i % 2 === 0) ? i : ''}.webp`);
+    img.setAttribute('data-src', `img/giphy${i}.webp`);
+    img.setAttribute('data-srcset', `img/giphy${i}.webp`);
     img.alt = '';
     card.appendChild(img);
 
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
     const title = document.createElement('h4');
-    title.style = 'font-size: 1vw;';
+    // title.style = 'font-size: 1vw;';
     title.innerText = 'Title Text'
     cardContent.appendChild(title);
     card.appendChild(cardContent);
