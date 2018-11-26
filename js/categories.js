@@ -51,7 +51,7 @@ const createCategoryCard = (category) => {
 
     const card = document.createElement('div');
     card.className = 'card ripple-effect';
-    card.style = 'width: 8vw;';
+    // card.style = 'width: 8vw;';
 
     const img = document.createElement('img');
     img.className = 'card-img';
@@ -65,7 +65,7 @@ const createCategoryCard = (category) => {
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
     const categoryName = document.createElement('h5');
-    categoryName.style = 'font-size: .8vw;';
+    // categoryName.style = 'font-size: .8vw;';
     categoryName.innerText = category;
     cardContent.appendChild(categoryName);
     card.appendChild(cardContent);
