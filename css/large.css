@@ -213,10 +213,10 @@ img {
     display: none;
 }
   
-.isFavourite .unmark {
+.isFavorite .unmark {
     display: none;
 }
 
-.isFavourite .mark {
+.isFavorite .mark {
     display: block;
 }
