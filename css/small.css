@@ -214,3 +214,15 @@ img {
     text-transform: uppercase;
     width: 100%;
 }
+
+.mark {
+    display: none;
+}
+  
+.isFavourite .unmark {
+    display: none;
+}
+
+.isFavourite .mark {
+    display: block;
+}
