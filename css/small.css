@@ -1,6 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: red;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+*:focus {
+  outline: 0;
+  box-shadow: 0 0 4px 4px blue;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -50,7 +69,7 @@ nav ul li:first-child a {
 
 nav .logo {
     color: #00e676;
-    font-size: 32px; 
+    font-size: 32px;
     font-weight: bold;
     font-family: cursive, monospace;
     text-decoration: none;
@@ -66,6 +85,12 @@ nav .logo {
     height: 30px;
     width: 120px;
     margin-top: 8px;
+}
+
+.label-text {
+    float: right;
+    margin-top: 14px;
+    color: #673ab7;
 }
 
 .ripple-effect {
@@ -101,13 +126,13 @@ nav .logo {
     margin-left: auto;
     margin-right: auto;
     padding: 16px;
-    margin-top: 130px; 
+    margin-top: 130px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadows to create the "card" effect */
     transition: 0.3s;
-    border-radius: 5px; 
+    border-radius: 5px;
     background-color: #ffffff;
     color: #000000;
     width: 100%;
@@ -213,4 +238,9 @@ img {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+}
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
 }

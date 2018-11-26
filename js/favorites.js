@@ -39,14 +39,16 @@ const createGifCard = (i) => {
     img.src = `img/placeholder.png`;
     img.setAttribute('data-src', `img/giphy${i}.webp`);
     img.setAttribute('data-srcset', `img/giphy${i}.webp`);
-    img.alt = '';
+    img.alt = `${i} Gif`;
     card.appendChild(img);
 
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
-    const title = document.createElement('h4');
+    const title = document.createElement('h3');
     // title.style = 'font-size: 1vw;';
-    title.innerText = 'Title Text'
+    title.innerText = i;
+    title.setAttribute('tabindex','0');
+    title.setAttribute('aria-label',i);
     cardContent.appendChild(title);
     card.appendChild(cardContent);
 
@@ -54,6 +56,8 @@ const createGifCard = (i) => {
     cardAction.className = 'card-action';
     const btn_fav = document.createElement('button');
     btn_fav.className = 'btn_favourite';
+    btn_fav.setAttribute('aria-label',`Mark ${i} favorite/unfavorite`);
+    btn_fav.setAttribute('tabindex','0');
     btn_fav.innerHTML = `<svg width="25" height="25"><g><title>background</title>
     <rect fill="none" id="canvas_background" height="27" width="27" y="-1" x="-1" /></g>
     <g><title>Favorite</title><path stroke="null" id="svg_1" fill="none" d="m0.207553,1l15.962492,0l0,13.698355l-15.962492,0l0,-13.698355z" />
@@ -63,6 +67,8 @@ const createGifCard = (i) => {
 
     const btn_share = document.createElement('button');
     btn_share.className = 'btn_share';
+    btn_share.setAttribute('aria-label',`share ${i}`);
+    btn_share.setAttribute('tabindex','0');
     btn_share.innerHTML = ` <svg width="24" height="24"><g><title>background</title>
     <rect fill="none" id="canvas_background" height="26" width="26" y="-1" x="-1" /></g><g>
     <title>Share</title><path fill="#bdbdbd" stroke="null" id="svg_1" d="m19.861938,15.527999c-1.160541,0 -2.204392,0.48583 -2.945537,1.261215l-8.659869,-4.218947c0.029782,-0.198219 0.050288,-0.398866 0.050288,-0.605344c0,-0.201134 -0.01953,-0.397409 -0.047847,-0.590283l8.647174,-4.172794c0.741633,0.7817 1.790367,1.272389 2.95579,1.272389c2.246869,0 4.068483,-1.812632 4.068483,-4.048421c0,-2.236275 -1.821614,-4.048421 -4.068483,-4.048421s-4.068483,1.812146 -4.068483,4.048421c0,0.201134 0.01953,0.396923 0.047847,0.590283l-8.647174,4.172794c-0.741633,-0.7817 -1.789879,-1.272389 -2.95579,-1.272389c-2.247357,0 -4.068483,1.812632 -4.068483,4.048421c0,2.236275 1.821126,4.048421 4.068483,4.048421c1.160541,0 2.204392,-0.48583 2.945537,-1.261215l8.659869,4.218947c-0.029782,0.197733 -0.050288,0.398866 -0.050288,0.605344c0,2.236275 1.821614,4.048421 4.068483,4.048421s4.068483,-1.812146 4.068483,-4.048421c0,-2.236275 -1.821614,-4.048421 -4.068483,-4.048421z"/>

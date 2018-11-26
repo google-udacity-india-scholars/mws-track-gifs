@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 /**
-* 
+*
 * @description Build category page URL
 * @param {string} category - categeory name
 * @author Istiaque Siddiqi
@@ -21,8 +21,8 @@ const urlForCategory = (category) => {
 
 
 /**
- * 
- * @description Fetch all categories 
+ *
+ * @description Fetch all categories
  * @author Istiaque Siddiqi
  */
 const fetchCategories = () => {
@@ -39,7 +39,7 @@ const fetchCategories = () => {
 
 
 /**
- * 
+ *
  * @description Create different gif category by category name
  * @param {string} category - category name
  * @author Istiaque Siddiqi
@@ -59,13 +59,15 @@ const createCategoryCard = (category) => {
     img.src = `img/placeholder.png`;
     img.setAttribute('data-src', `img/${category}.webp`);
     img.setAttribute('data-srcset', `img/${category}.webp`);
-    img.alt = '';
+    img.alt = `${category} Category`;
     card.appendChild(img);
 
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
-    const categoryName = document.createElement('h5');
+    const categoryName = document.createElement('h3');
     // categoryName.style = 'font-size: .8vw;';
+    categoryName.setAttribute('tabindex','0');
+    categoryName.setAttribute('aria-label',category);
     categoryName.innerText = category;
     cardContent.appendChild(categoryName);
     card.appendChild(cardContent);

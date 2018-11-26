@@ -21,10 +21,10 @@
 
 <body>
     <header>
+      <a href="#maincontent" class="skip-link">Skip to main content</a>
         <nav>
             <a href="index.html" class="logo">Gify</a>
-            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
-            />
+
             <ul>
                 <li>
                     <a class="ripple-effect" href="index.html">Trending</a>
@@ -36,17 +36,22 @@
                     <a class="ripple-effect" href="favorites.html">Favorites</a>
                 </li>
             </ul>
+            <label class="label-text">search</label>
+            <input id='q' class="search-bar" name="q" type="search"
+            placeholder="Search gif..." required="required"
+            aria-label="search gifs"
+            />
         </nav>
     </header>
     <main id="maincontent">
-        <h2 id="heading"></h2>
-        <section id="search-section">
+        <h2 id="heading" tabindex="0"></h2>
+        <section id="search-section" aria-label="gif search results">
             <ul id="gif-list"></ul>
         </section>
     </main>
     <footer id="footer">
         Copyright (c) 2018
-        <a href="index.html">
+        <a href="index.html" tabindex="0">
             <strong>Gify</strong>
         </a> All Rights Reserved.
     </footer>
