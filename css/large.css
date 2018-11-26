@@ -208,3 +208,15 @@ img {
     filter: blur(0em);
     transition: filter 0.5s;
 }
+
+.mark {
+    display: none;
+}
+  
+.isFavourite .unmark {
+    display: none;
+}
+
+.isFavourite .mark {
+    display: block;
+}
