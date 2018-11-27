@@ -245,7 +245,20 @@ img {
     width: 100%;
 }
 
+
 #footer a {
   color: #fff;
   text-decoration: none;
+}
+
+.mark {
+    display: none;
+}
+
+.isFavourite .unmark {
+    display: none;
+}
+
+.isFavourite .mark {
+    display: block;
 }

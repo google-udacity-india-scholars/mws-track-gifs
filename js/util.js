@@ -74,21 +74,26 @@ const GIF_CATEGORIES = new Set([
  * 
  * @description This method is used to shorten the title to two words at most and 
  * if webp format is not available than fallback to another fomrat
- * @param {object} gif - JSON object
+ * @param {object} gifs - JSON object
  * @author Istiaque Siddiqi
  */
-const customizeGifObject = (gif) => {
-    let title = gif.title;
-    title = title.split(' ');
-    // getting only first two word from title
-    title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
-    title = title.toUpperCase();
+const customizeGifObject = (gifs) => {
+    let gifList = [];
+    gifs.forEach(gif => {
+        let id = gif.id;
+        let title = gif.title;
+        let isFavorite = false;
+        title = title.split(' ');
+        // getting only first two word from title
+        title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
+        title = title.toUpperCase();
 
-    let img = gif.images.original;
-    // Fallback if webp format is not available   
-    img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
-    gif = { img, title };
-    return gif;
+        let img = gif.images.original;
+        // Fallback if webp format is not available   
+        img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
+        gifList.push({ id, img, title, isFavorite });
+    });
+    return gifList;
 }
 
 

@@ -33,8 +33,8 @@ const fetchTrendingGifs = async () => {
  */
 const setTrendingList = (gifs) => {
     const ul = document.getElementById('gif-list');
+    gifs = customizeGifObject(gifs);
     gifs.forEach(gif => {
-        gif = customizeGifObject(gif);
         ul.appendChild(createGifCard(gif));
     });
 }
@@ -73,14 +73,25 @@ const createGifCard = (gif) => {
     const cardAction = document.createElement('div');
     cardAction.className = 'card-action';
     const btn_fav = document.createElement('button');
+
     btn_fav.setAttribute('aria-label',`Mark ${gif.title} favorite/unfavorite`);
     btn_fav.setAttribute('tabindex','0');
-    btn_fav.className = 'btn_favourite';
-    btn_fav.innerHTML = `<svg width="25" height="25"><g><title>background</title>
+    btn_fav.id = `btn_favourite_${gif.id}`;
+    btn_fav.className = `btn_favourite${(gif.isFavorite === true) ? ' isFavourite' : ""}`;
+    btn_fav.innerHTML = `<svg width="25" height="25" class="unmark"><g><title>background</title>
     <rect fill="none" id="canvas_background" height="27" width="27" y="-1" x="-1" /></g>
     <g><title>Favorite</title><path stroke="null" id="svg_1" fill="none" d="m0.207553,1l15.962492,0l0,13.698355l-15.962492,0l0,-13.698355z" />
     <path fill="#bdbdbd" stroke="null" id="svg_2" d="m12.490655,24.907681l-1.808404,-1.770061c-6.422952,-6.292801 -10.663348,-10.445377 -10.663348,-15.52673c0,-4.152576 3.011928,-7.403295 6.859463,-7.403295c2.170085,0 4.252867,1.090304 5.612288,2.806522c1.359421,-1.716218 3.442203,-2.806522 5.612288,-2.806522c3.847535,0 6.859463,3.25072 6.859463,7.403295c0,5.081353 -4.240396,9.233928 -10.663348,15.52673l-1.808404,1.770061z"/>
+    </g></svg>
+    <svg width="25" height="25" class="mark"><g><title>background</title>
+    <rect fill="none" id="canvas_background" height="27" width="27" y="-1" x="-1" /></g>
+    <g><title>Favorite</title><path stroke="null" id="svg_1" fill="none" d="m0.207553,1l15.962492,0l0,13.698355l-15.962492,0l0,-13.698355z" />
+    <path fill="#f44336" stroke="null" id="svg_2" d="m12.490655,24.907681l-1.808404,-1.770061c-6.422952,-6.292801 -10.663348,-10.445377 -10.663348,-15.52673c0,-4.152576 3.011928,-7.403295 6.859463,-7.403295c2.170085,0 4.252867,1.090304 5.612288,2.806522c1.359421,-1.716218 3.442203,-2.806522 5.612288,-2.806522c3.847535,0 6.859463,3.25072 6.859463,7.403295c0,5.081353 -4.240396,9.233928 -10.663348,15.52673l-1.808404,1.770061z"/>
     </g></svg>`;
+
+    btn_fav.addEventListener('click', (e) => {
+        document.getElementById(`btn_favourite_${gif.id}`).classList.toggle('isFavourite');
+    });
     cardAction.appendChild(btn_fav);
 
     const btn_share = document.createElement('button');

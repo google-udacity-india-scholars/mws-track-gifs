@@ -248,3 +248,15 @@ img {
   color: #fff;
   text-decoration: none;
 }
+
+.mark {
+    display: none;
+}
+
+.isFavourite .unmark {
+    display: none;
+}
+
+.isFavourite .mark {
+    display: block;
+}
