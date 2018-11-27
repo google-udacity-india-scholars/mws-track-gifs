@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 const fetchTrendingGifs = async () => {
     try {
         let gifs = await DBHelper.getTrendingGifs();
-        gifs = gifs.data;
         setTrendingList(gifs);
         loadLazyImage();
     } catch (error) {
@@ -33,7 +32,6 @@ const fetchTrendingGifs = async () => {
  */
 const setTrendingList = (gifs) => {
     const ul = document.getElementById('gif-list');
-    gifs = customizeGifObject(gifs);
     gifs.forEach(gif => {
         ul.appendChild(createGifCard(gif));
     });

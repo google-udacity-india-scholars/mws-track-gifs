@@ -44,7 +44,7 @@ const fetchGifsByCategory = async () => {
             gifs = await DBHelper.getGifsByCategoryName(categoryName);
         }
 
-        setCategoryView(categoryName, gifs.data);
+        setCategoryView(categoryName, gifs);
     } catch (error) {
         logErrorMsg(error, `fetchGifsByCategory`);
     }
@@ -61,7 +61,6 @@ const fetchGifsByCategory = async () => {
 const setCategoryView = (categoryName, gifs) => {
     document.getElementById('heading').innerText = categoryName.toUpperCase();
     const ul = document.getElementById('gif-list');
-    gifs = customizeGifObject(gifs);
     gifs.forEach(gif => {
         ul.appendChild(createGifCard(gif));
     });
