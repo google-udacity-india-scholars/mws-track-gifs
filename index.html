@@ -21,9 +21,13 @@
 
 <body>
     <header>
+      <a href="#maincontent" class="skip-link">Skip to main content</a>
         <nav>
             <a href="index.html" class="logo">Gify</a>
-            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
+            <label class="label-text">search</label>
+            <input id='q' class="search-bar" name="q" type="search"
+            placeholder="Search gif..."
+            aria-label="search gifs" role="search" required
             />
             <ul>
                 <li>
@@ -38,15 +42,15 @@
             </ul>
         </nav>
     </header>
-    <main id="maincontent">
-        <h2 id="heading">Trending</h2>
-        <section id="trending-section">
-            <ul id="gif-list"></ul>
+    <main id="maincontent" tabindex="-1" role="main">
+        <h2 id="heading" tabindex="0">Trending</h2>
+        <section id="trending-section" aria-label="trending gifs">
+            <ul id="gif-list" aria-label="Trending Gif List" tabindex="0"></ul>
         </section>
     </main>
     <footer id="footer">
         Copyright (c) 2018
-        <a href="index.html">
+        <a href="index.html" tabindex="0">
             <strong>Gify</strong>
         </a> All Rights Reserved.
     </footer>
