@@ -71,6 +71,7 @@
         $p.style.fontWeight = 300;
         $p.style.lineHeight = '1em';
         $p.innerHTML = options.text;
+        $p.setAttribute('aria-live','assertive');
         Snackbar.snackbar.appendChild($p);
         Snackbar.snackbar.style.background = options.backgroundColor;
 

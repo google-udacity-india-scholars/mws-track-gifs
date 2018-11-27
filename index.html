@@ -36,14 +36,15 @@
                     <a class="ripple-effect" href="favorites.html">Favorites</a>
                 </li>
             </ul>
+            
             <label class="label-text">search</label>
             <input id='q' class="search-bar" name="q" type="search"
-            placeholder="Search gif..." required="required"
-            aria-label="search gifs"
+            placeholder="Search gif..."
+            aria-label="search gifs" role="search" required
             />
         </nav>
     </header>
-    <main id="maincontent" tabindex="-1">
+    <main id="maincontent" tabindex="-1" role="main">
         <h2 id="heading" tabindex="0">Trending</h2>
         <section id="trending-section" aria-label="trending gifs">
             <ul id="gif-list" aria-label="Trending Gif List" tabindex="0"></ul>
