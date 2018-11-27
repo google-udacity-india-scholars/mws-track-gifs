@@ -148,6 +148,7 @@ const lazyLoadImage = (image) => {
 */
 const search = () => {
     try {
+        if(document.getElementById('q').value.length)
         window.location.href = `./search.html?q=${document.getElementById('q').value}`;
     } catch (error) {
         logErrorMsg(error, `search`);
