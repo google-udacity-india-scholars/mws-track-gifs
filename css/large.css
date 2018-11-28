@@ -124,6 +124,7 @@ nav .logo {
     padding: 2px 16px;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 12px;
 }
 
 .card .card-action {
@@ -229,7 +230,7 @@ nav .logo {
 #categories-list .card-content {
     padding: 12px 8px;
 }
-#categories-list .card-content h5 {
+#categories-list .card-content h3 {
     margin: 0;
 }
 
