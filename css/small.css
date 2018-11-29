@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* CSS Document */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: red;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+*:focus {
+  outline: 0;
+  box-shadow: 0 0 4px 4px blue;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eceff1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: #673ab7;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    z-index: 1000;
+    padding: 16px 16px 0px 16px;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 24px;
+    padding: 0;
+    text-align: left;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px;
+    color: #ffffff;
+    text-align: left;
+}
+
+nav ul li:first-child a {
+    padding-left: 0;
+}
+
+nav .logo {
+    color: #00e676;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: cursive, monospace;
+    text-decoration: none;
+}
+
+.search-bar {
+    background-color: #ffffff;
+    border: 1px solid #dad7de;
+    border-radius: 4px;
+    padding-left: 1rem;
+    font-size: 12px;
+    float: right;
+    height: 30px;
+    width: 120px;
+    margin-top: 8px;
+}
+
+.label-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  float: right;
+  width: 1px;
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple-effect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #ffffff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+
+.ripple-effect:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+#maincontent {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    margin-top: 130px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+}
+
+.card .card-img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 32vh;
+}
+
+.card .card-content {
+    padding: 2px 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.card .card-action {
+    padding: 8px;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    text-align: right;
+}
+
+.btn_favourite,
+.btn_share {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn_favourite:focus,
+.btn_share:focus {
+    outline: none;
+}
+
+#trending-section,
+#categories-section,
+#category-section,
+#favorite-section,
+#search-section {
+    width: 100%;
+    height: 100%;
+}
+
+
+#gif-list,
+#categories-list {
+    list-style: outside none none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+#gif-list li {
+    margin-bottom: 16px;
+    padding: 8px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+#categories-list li {
+    padding: 16px 8px;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+#categories-list a {
+    text-decoration: none;
+}
+
+#categories-list .card-content {
+    padding: 12px 8px;
+}
+#categories-list .card-content h3 {
+    margin: 0;
+}
+
+img[data-src] {
+    filter: blur(0.5em);
+    transition: all 0.5s;
+}
+
+
+img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+}
+
+#footer {
+    background-color: #616161;
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.mark {
+    display: none;
+}
+
+.isFavourite .unmark {
+    display: none;
+}
+
+.isFavourite .mark {
+    display: block;
+}

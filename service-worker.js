@@ -7,6 +7,9 @@ const static_assets = [
   'categories.html',
   'category.html',
   'favorites.html',
+  '/css/large.css',
+  '/css/medium.css',
+  '/css/small.css',
   '/css/style.css',
   '/css/snackbar.css',
   '/js/dbhelper.js',
@@ -21,11 +24,11 @@ const static_assets = [
   '/js/search.js',
   '/icon/favorite-icon.svg',
   '/icon/share-icon.svg',
-  '/img/Angry.webp',
-  '/img/Anniversary.webp',
-  '/img/Awkward.webp',
-  '/img/Aww.webp',
-  '/img/Birthday.webp'
+  '/img/angry.webp',
+  '/img/anniversary.webp',
+  '/img/awkward.webp',
+  '/img/aww.webp',
+  '/img/birthday.webp'
 ];
 
 /**
