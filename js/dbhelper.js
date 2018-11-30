@@ -253,6 +253,26 @@ class DBHelper {
     }
 
     /**
+     *
+     * @description Get a gif for query
+     * @author Istiaque Siddiqi
+     */
+    static getGifsByQuery(query) {
+        return new Promise(async (resolve, reject) => {
+            let gifs;
+            try {
+                const apiEndpoint = `${DBHelper.API_BASE_URL}/search?api_key=${DBHelper.API_KEY}&q=${query}&limit=25&offset=0&rating=G&lang=en`;
+                gifs = await DBHelper.getServerData(apiEndpoint);
+                gifs = await customizeGifObject(gifs.data);
+                return resolve(gifs);
+            } catch (error) {
+                logErrorMsg(error, `getGifsByQuery`);
+                return reject(error.stack);
+            }
+        });
+    }
+
+    /**
      * @description Toogle favorite
      * @param {string} name - Name of object store
      * @param {number} id - id of gif
