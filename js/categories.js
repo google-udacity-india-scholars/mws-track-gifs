@@ -45,6 +45,7 @@ const fetchCategories = () => {
  * @author Istiaque Siddiqi
  */
 const createCategoryCard = (category) => {
+    category = category.toLowerCase();
     const li = document.createElement('li');
     const href = document.createElement('a');
     href.href = urlForCategory(category.toLowerCase());
