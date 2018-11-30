@@ -80,7 +80,7 @@ const createGifCard = (gif) => {
 
     const btn_share = document.createElement('button');
     btn_share.className = 'btn_share';
-    btn_share.setAttribute('aria-label',`share ${i}`);
+    btn_share.setAttribute('aria-label', `share ${gif.title}`);
     btn_share.setAttribute('tabindex','0');
     btn_share.innerHTML = ` <svg width="24" height="24"><g><title>background</title>
     <rect fill="none" id="canvas_background" height="26" width="26" y="-1" x="-1" /></g><g>
