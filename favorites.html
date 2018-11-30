@@ -21,16 +21,19 @@
 
 <body>
     <header>
+      <a href="#maincontent" class="skip-link">Skip to main content</a>
         <nav>
             <a href="index.html" class="logo">Gify</a>
-            <input id='q' class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on"
+            <label class="label-text">search</label>
+            <input id='q' class="search-bar" name="q" type="search" role="search"
+            placeholder="Search gif..." aria-label="search gifs" required
             />
             <ul>
                 <li>
                     <a class="ripple-effect" href="index.html">Trending</a>
                 </li>
                 <li>
-                    <a class="ripple-effect" href="categories.html">Categorise</a>
+                    <a class="ripple-effect" href="categories.html">Categories</a>
                 </li>
                 <li>
                     <a class="ripple-effect" href="favorites.html">Favorites</a>
@@ -38,10 +41,10 @@
             </ul>
         </nav>
     </header>
-    <main id="maincontent">
-        <h2 id="heading">Favorite</h2>
-        <section id="favorite-section">
-            <ul id="gif-list"></ul>
+    <main id="maincontent" role="main">
+        <h2 id="heading" tabindex="0">Favorite</h2>
+        <section id="favorite-section" aria-label="favorite gifs">
+            <ul id="gif-list" aria-label="Favorite Gif List" tabindex="0"></ul>
         </section>
     </main>
     <!-- <footer id="footer">
