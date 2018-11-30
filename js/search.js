@@ -60,7 +60,6 @@ const setSearchResults = (gifs, query) => {
     document.getElementById('q').value = query;
     document.getElementById('heading').innerText = `Search results for ${query}`;
     const ul = document.getElementById('gif-list');
-    // console.log(gifs)
     gifs.forEach(gif => {
         ul.appendChild(createGifCard(gif));
     });
@@ -115,7 +114,13 @@ const createGifCard = (gif) => {
 
     btn_fav.addEventListener('click', (e) => {
         document.getElementById(`btn_favourite_${gif.id}`).classList.toggle('isFavourite');
-        DBHelper.toggleFavorite('favorite-gifs', gif.id);
+        if (gif.isFavorite) {
+            gif.isFavorite = false;
+            DBHelper.deleteGifFromDB('favorite-gifs', gif);
+        } else {
+            gif.isFavorite = true;
+            DBHelper.addGifToDB('favorite-gifs', gif);
+        }
     });
     cardAction.appendChild(btn_fav);
 
