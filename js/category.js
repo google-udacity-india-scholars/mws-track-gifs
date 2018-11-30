@@ -115,6 +115,7 @@ const createGifCard = (gif) => {
 
     btn_fav.addEventListener('click', (e) => {
         document.getElementById(`btn_favourite_${gif.id}`).classList.toggle('isFavourite');
+        DBHelper.toggleFavorite('category-gifs', gif.id);
     });
     cardAction.appendChild(btn_fav);
 
