@@ -74,7 +74,7 @@ const createGifCard = (gif) => {
 
     btn_fav.addEventListener('click', (e) => {
         document.getElementById(gif.id).remove();
-        DBHelper.toggleFavorite('trending-gifs', gif.id);
+        DBHelper.toggleFavorite('favorite-gifs', gif.id);
     });
     cardAction.appendChild(btn_fav);
 

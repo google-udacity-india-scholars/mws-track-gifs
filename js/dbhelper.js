@@ -287,7 +287,7 @@ class DBHelper {
                 const store = tx.objectStore(name);
                 const gif = await store.get(id);
                 gif['isFavorite'] = !gif['isFavorite'];
-                store.put(gif);
+                await store.put(gif);
                 if (gif['isFavorite']) {
                     await this.addGifToDB('favorite-gifs', gif);
                 } else {
