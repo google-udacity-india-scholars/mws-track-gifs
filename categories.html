@@ -6,48 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Find and share animated gifs" />
+    <meta name="theme-color" content="#673ab7">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon/#">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="css/large.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 899px)" href="css/medium.css">
+    <link rel="stylesheet" media="screen and (max-width: 599px)" href="css/small.css">
     <link rel="stylesheet" href="css/snackbar.css">
     <title>Gify | Categories</title>
 </head>
 
 <body>
     <header>
+      <a href="#maincontent" class="skip-link">Skip to main content</a>
         <nav>
             <a href="index.html" class="logo">Gify</a>
+            <label class="label-text">search</label>
+            <input id='q' class="search-bar" name="q" type="search"
+            placeholder="Search gif..."
+            aria-label="search gifs" role="search" required
+            />
             <ul>
                 <li>
                     <a class="ripple-effect" href="index.html">Trending</a>
                 </li>
                 <li>
-                    <a class="ripple-effect" href="categories.html">Categorise</a>
+                    <a class="ripple-effect" href="categories.html">Categories</a>
                 </li>
                 <li>
                     <a class="ripple-effect" href="favorites.html">Favorites</a>
                 </li>
             </ul>
-            <input class="search-bar" name="q" type="search" placeholder="Search gif..." required="required" autocomplete="on" />
         </nav>
     </header>
-    <main id="maincontent">
-        <h3 id="heading">Categories</h3>
-        <section id="categories-section">
-            <ul id="categories-list"></ul>
+    <main id="maincontent" role="main">
+        <h2 id="heading" tabindex="0">Categories</h2>
+        <section id="categories-section" aria-label="gif categories">
+            <ul id="categories-list" aria-label="Gif List of categories" tabindex="0"></ul>
         </section>
     </main>
     <footer id="footer">
         Copyright (c) 2018
-        <a href="#">
+        <a href="index.html" tabindex="0">
             <strong>Gify</strong>
         </a> All Rights Reserved.
     </footer>
 
-    <script charset="utf-8" src="js/categories.js"></script>
     <script charset="utf-8" src="js/dbhelper.js"></script>
+    <!-- sw registration -->
+    <script type="application/javascript" charset="utf-8" src="js/register.js"></script>
+    <script charset="utf-8" src="js/categories.js"></script>
     <script charset="utf-8" src="js/util.js"></script>
     <script charset="utf-8" src="js/idb.js"></script>
     <script charset="utf-8" src="js/snackbar.js"></script>

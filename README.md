@@ -4,9 +4,10 @@ Hi,You've got this template to edit as you start with the Collaborative Projects
 
 **Team**
 - (Add your or your teammates slack Handle here)
-- @Abdul Kadir.mws
-- @dharmateja.mws
-- @Siddiqi.mws
+- [@bunny.mws](https://www.linkedin.com/in/sourya-v-8614b979)
+- [@Abdul Kadir.mws](https://www.linkedin.com/in/abdul-kadir-olia-3a898712b)
+- [@dharmateja.mws](https://www.linkedin.com/in/cdharmateja/)
+- [@Siddiqi.mws](https://in.linkedin.com/in/istiaquesiddiqi)
 - Looking for teammates
 
 ## Table of Contents

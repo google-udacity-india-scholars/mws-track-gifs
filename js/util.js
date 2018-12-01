@@ -74,19 +74,108 @@ const GIF_CATEGORIES = new Set([
  * 
  * @description This method is used to shorten the title to two words at most and 
  * if webp format is not available than fallback to another fomrat
- * @param {object} gif - JSON object
+ * @param {object} gifs - JSON object
  * @author Istiaque Siddiqi
  */
-const customizeGifObject = (gif) => {
-    let title = gif.title;
-    title = title.split(' ');
-    // getting only first two word from title
-    title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
-    title = title.toUpperCase();
+const customizeGifObject = (gifs) => {
+    return new Promise((resolve, reject) => {
+        let gifList = [];
+        Promise.all(gifs.map(async gif => {
+            let id = gif.id;
+            let title = gif.title;
+            let isFavorite = await DBHelper.isItFavorite(id);
+            title = title.split(' ');
+            // getting only first two word from title
+            title = (title.length === 1) ? `${title[0]}` : `${title[0]} ${title[1]}`;
+            title = title.toUpperCase();
 
-    let img = gif.images.original;
-    // Fallback if webp format is not available   
-    img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
-    gif = { img, title };
-    return gif;
+            let img = gif.images.original;
+            // Fallback if webp format is not available
+            img = ((img.webp === '') || (img.webp === undefined) || (img.webp === null)) ? img.url : img.webp;
+            gifList.push({ id, img, title, isFavorite });
+        })).then(() => {
+            resolve(gifList);
+        }).catch(err => reject(err));
+    });
 }
+
+
+/**
+ * 
+ * @description Lazy loading gifs defer loading of gifs at later 
+ * point of time when they are needed just to improve the page load time
+ * and avoids unnessary utilization of system resources and user's data plan
+ * @author Istiaque Siddiqi
+ */
+const loadLazyImage = () => {
+    let lazyImages = document.querySelectorAll('img[data-src]');
+    if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    lazyLoadImage(entry.target);
+                    lazyImageObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            lazyImageObserver.observe(img);
+        });
+    } else {
+        lazyImages.forEach(img => {
+            lazyLoadImage(img);
+        });
+    }
+}
+
+
+/**
+ * 
+ * @param {object} image
+ * @author Istiaque Siddiqi
+ */
+const lazyLoadImage = (image) => {
+    image.setAttribute('src', image.getAttribute('data-src'));
+    image.onload = () => {
+        image.removeAttribute('data-src');
+    };
+};
+
+
+/**
+* 
+* @description Build and redirect to search page URL
+* @param {string} query - query string to search gifs
+* @author Istiaque Siddiqi
+*/
+const search = () => {
+    try {
+        if(document.getElementById('q').value.length)
+        window.location.href = `./search.html?q=${document.getElementById('q').value}`;
+    } catch (error) {
+        logErrorMsg(error, `search`);
+    }
+}
+
+// Event listener to key stroke in search box
+document.getElementById('q').addEventListener('keydown', debounced(1000, search));
+/**
+ * 
+ * @description Trigger api call only after user stops typing in search box using debounce technique
+ * @param {number} delay - time in millisecond
+ * @param {function} fn - function name
+ */
+function debounced(delay, fn) {
+    let timerId;
+    return function (...args) {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        timerId = setTimeout(() => {
+            fn(...args);
+            timerId = null;
+        }, delay);
+    }
+}
+
