@@ -24,12 +24,81 @@ const static_assets = [
   '/js/search.js',
   '/icon/favorite-icon.svg',
   '/icon/share-icon.svg',
+  '/img/placeholder.png'
+];
+
+const static_img_assets = [
   '/img/angry.webp',
   '/img/anniversary.webp',
   '/img/awkward.webp',
   '/img/aww.webp',
-  '/img/birthday.webp'
+  '/img/birthday.webp',
+  '/img/bored.webp',
+  '/img/bye.webp',
+  '/img/cats.webp',
+  '/img/cheers.webp',
+  '/img/chill out.webp',
+  '/img/christmas.webp',
+  '/img/clapping.webp',
+  '/img/classics.webp',
+  '/img/cold.webp',
+  '/img/compliments.webp',
+  '/img/confused.webp',
+  '/img/congratulations.webp',
+  '/img/creep.webp',
+  '/img/dancing.webp',
+  '/img/diwali.webp',
+  '/img/dogs.webp',
+  '/img/done.webp',
+  '/img/eid mubarak.webp',
+  '/img/engagement & wedding.webp',
+  '/img/excited.webp',
+  '/img/excuse me.webp',
+  '/img/eye roll.webp',
+  '/img/father\'s day.webp',
+  '/img/friendship.webp',
+  '/img/get well.webp',
+  '/img/good luck.webp',
+  '/img/good morning.webp',
+  '/img/good night.webp',
+  '/img/graduation.webp',
+  '/img/halloween.webp',
+  '/img/high five.webp',
+  '/img/hugs.webp',
+  '/img/hungry.webp',
+  '/img/laughing.webp',
+  '/img/loser.webp',
+  '/img/love.webp',
+  '/img/mind blown.webp',
+  '/img/miss you.webp',
+  '/img/mother\'s day.webp',
+  '/img/nervous.webp',
+  '/img/new baby.webp',
+  '/img/new year.webp',
+  '/img/no.webp',
+  '/img/omg.webp',
+  '/img/oops.webp',
+  '/img/party.webp',
+  '/img/please.webp',
+  '/img/popcorn.webp',
+  '/img/scared.webp',
+  '/img/shocked.webp',
+  '/img/shrug.webp',
+  '/img/sleepy.webp',
+  '/img/sorry.webp',
+  '/img/stop.webp',
+  '/img/sympathy.webp',
+  '/img/thank you.webp',
+  '/img/thumbs up.webp',
+  '/img/valentine\'s day.webp',
+  '/img/waiting.webp',
+  '/img/what.webp',
+  '/img/wink.webp',
+  '/img/wow.webp',
+  '/img/yes.webp',
+  '/img/yikes.webp'
 ];
+
 
 /**
  *
@@ -43,7 +112,8 @@ self.addEventListener('install', (event) => {
     caches.open(static_cache)
       .then(cache => {
         console.log("Pre-caching static content.");
-        cache.addAll(static_assets);
+        cache.addAll(static_img_assets);
+        return cache.addAll(static_assets);
       })
   );
 });
