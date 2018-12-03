@@ -65,7 +65,7 @@ As a benchmark we will follow Restaurant Reviews: Stage 2 Rubrics
 And one needs to get their API key from from GIPHY https://giphy.com/ and it is an open source api for GIFS and images.
 
 ## Project URL
-[Visit the app](#)
+[Visit the app](https://gify-pwa.herokuapp.com/)
 
 In case you have any!
 
